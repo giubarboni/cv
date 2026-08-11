@@ -269,8 +269,14 @@
 
   /* ---------- Print ---------- */
   @media print {
+    /* I margini stanno su @page perche' si ripetono su ogni pagina: spostarli come
+       padding di .page fa cadere l'interruzione dentro il riquadro imbottito e spezza
+       male il contenuto. L'area di margine di @page sta pero' fuori dal riquadro della
+       pagina e nessuna regola CSS la puo' colorare: resta bianca. Per questo in stampa
+       lo sfondo diventa bianco anche lui, cosi' cornice e contenuto coincidono. */
     @page { size: A4; margin: 20mm 18mm; }
-    html, body { background: var(--bg); }
+    :root { --bg: #FFFFFF; }
+    html, body { background: #FFFFFF; }
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page { max-width: none; padding: 0; margin: 0; }
     a { color: var(--ink-dim) !important; }
@@ -308,12 +314,10 @@
       <div class="job-main">
         <p class="job-company">Tinexta Innovation Hub <span class="aka">(già Enhancers)</span></p>
         <p class="job-title">Junior Product Designer → Digital Product Designer</p>
-        <ul>
         <p class="job-desc">Disegno flussi per SaaS, prodotti B2C e B2B. Trasformo user needs in flussi chiari, lavorando a stretto contatto con product manager e sviluppo. Mi muovo tra Figma e prototipi sviluppati in base alle necessità di progetto.</p>
-        <p class="sub-label">Progetti</p>
+        <p class="sub-label">Un progetto significativo</p>
         <ul>
           <li><b>Lextel AI</b> - SaaS AI per avvocati, tra i primi prodotti AI italiani (2023): UX/UI e landing page.</li>
-          <li><b>Sara Assicurazioni</b> - ho reso il workflow di design del team AI-first, diventando il riferimento per PM, senior designer e dev.</li>
         </ul>
       </div>
     </div>
@@ -323,12 +327,10 @@
       <div class="job-main">
         <p class="job-company">Feel Love Agency</p>
         <p class="job-title">Junior Art Director</p>
-        <ul>
         <p class="job-desc">Identità visive e output grafici per stampa e digitale, per piccoli brand locali.</p>
-        <p class="sub-label">Progetti</p>
+        <p class="sub-label">Un progetto significativo</p>
         <ul>
-          <li><b>Malaterra</b> - catena di pizzerie a Roma: feed Instagram e menu.</li>
-          <li>Un gioco di carte per bambini disegnato su una tovaglietta da ristorante.</li>
+          <li><b>Malaterra</b> - catena di pizzerie a Roma, per cui ho progettato un gioco di carte per bambini sulle tovagliette del ristorante.</li>
         </ul>
       </div>
     </div>
