@@ -268,6 +268,26 @@
     .job-dates, .edu-dates, .skill-cat { flex: none; }
   }
 
+  /* ---------- Cambio lingua (mai in stampa: il CV vive come PDF) ---------- */
+  .lang-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    cursor: pointer;
+  }
+
+  .lang-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
   /* ---------- Print ---------- */
   @media print {
     /* I margini stanno su @page perche' si ripetono su ogni pagina: spostarli come
@@ -281,6 +301,7 @@
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page { max-width: none; padding: 0; margin: 0; }
     a { color: var(--ink-dim) !important; }
+    .lang-toggle { display: none !important; }
   }
 </style>
 <script type="application/ld+json">
@@ -370,6 +391,8 @@
 </script>
 </head>
 <body>
+<button id="langBtn" class="lang-toggle" type="button" aria-label="Switch to English">ENG</button>
+
 
 <div class="page">
 
@@ -379,7 +402,7 @@
       <h1 class="name">Giulio Barboni</h1>
       <p class="role">Digital Product Designer</p>
       <div class="meta-row">
-        <span>Torino</span>
+        <span data-i18n="city">Torino</span>
         <a href="mailto:giu.barboni@gmail.com">giu.barboni@gmail.com</a>
         <a href="tel:+393317548002">331 7548002</a>
         <a href="https://giubarboni.github.io/portfolio/" class="portfolio-link">Portfolio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
@@ -388,22 +411,22 @@
   </header>
 
   <section>
-    <h2 class="label">Chi sono</h2>
-    <p class="bio">Sono un Digital Product Designer con 3 anni di esperienza e un doppio background: comunicazione e prodotto digitale. Attualmente sto esplorando tutti i modi in cui l'AI può supportarmi nel mio lavoro. Per attitudine metto ordine, ma quando posso inventare mi diverto un po' di più.</p>
+    <h2 class="label" data-i18n="l.about">Chi sono</h2>
+    <p class="bio" data-i18n="bio">Sono un Digital Product Designer con 3 anni di esperienza e un doppio background: comunicazione e prodotto digitale. Attualmente sto esplorando tutti i modi in cui l'AI può supportarmi nel mio lavoro. Per attitudine metto ordine, ma quando posso inventare mi diverto un po' di più.</p>
   </section>
 
   <section>
-    <h2 class="label">Esperienze lavorative</h2>
+    <h2 class="label" data-i18n="l.exp">Esperienze lavorative</h2>
 
     <div class="job">
-      <div class="job-dates"><time datetime="2023">2023</time> - oggi</div>
+      <div class="job-dates" data-i18n="job1.dates"><time datetime="2023">2023</time> - oggi</div>
       <div class="job-main">
-        <h3 class="job-company">Tinexta Innovation Hub <span class="aka">(già Enhancers)</span></h3>
+        <h3 class="job-company">Tinexta Innovation Hub <span class="aka" data-i18n="job1.aka">(già Enhancers)</span></h3>
         <p class="job-title">Junior Product Designer → Digital Product Designer</p>
-        <p class="job-desc">Disegno flussi per SaaS, prodotti B2C e B2B. Trasformo user needs in flussi chiari, lavorando a stretto contatto con product manager e sviluppo. Mi muovo tra Figma e prototipi sviluppati in base alle necessità di progetto.</p>
-        <h4 class="sub-label">Un progetto significativo</h4>
+        <p class="job-desc" data-i18n="job1.desc">Disegno flussi per SaaS, prodotti B2C e B2B. Trasformo user needs in flussi chiari, lavorando a stretto contatto con product manager e sviluppo. Mi muovo tra Figma e prototipi sviluppati in base alle necessità di progetto.</p>
+        <h4 class="sub-label" data-i18n="l.project">Un progetto significativo</h4>
         <ul>
-          <li><b>Lextel AI</b> - SaaS AI per avvocati, tra i primi prodotti AI italiani (2023): UX/UI e landing page.</li>
+          <li data-i18n="job1.proj"><b>Lextel AI</b> - SaaS AI per avvocati, tra i primi prodotti AI italiani (2023): UX/UI e landing page.</li>
         </ul>
       </div>
     </div>
@@ -413,58 +436,181 @@
       <div class="job-main">
         <h3 class="job-company">Feel Love Agency</h3>
         <p class="job-title">Junior Art Director</p>
-        <p class="job-desc">Identità visive e output grafici per stampa e digitale, per piccoli brand locali.</p>
-        <h4 class="sub-label">Un progetto significativo</h4>
+        <p class="job-desc" data-i18n="job2.desc">Identità visive e output grafici per stampa e digitale, per piccoli brand locali.</p>
+        <h4 class="sub-label" data-i18n="l.project">Un progetto significativo</h4>
         <ul>
-          <li><b>Malaterra</b> - catena di pizzerie a Roma, per cui ho progettato un gioco di carte per bambini sulle tovagliette del ristorante.</li>
+          <li data-i18n="job2.proj"><b>Malaterra</b> - catena di pizzerie a Roma, per cui ho progettato un gioco di carte per bambini sulle tovagliette del ristorante.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section>
-    <h2 class="label">Formazione</h2>
+    <h2 class="label" data-i18n="l.edu">Formazione</h2>
     <div class="edu-row">
       <div class="edu-dates"><time datetime="2020">2020</time> - <time datetime="2023">2023</time></div>
-      <div class="edu-main"><b>IAAD</b> - <span>Digital Communication Design</span></div>
+      <div class="edu-main" data-i18n="edu1"><b>IAAD</b> - <span>Digital Communication Design</span></div>
     </div>
     <div class="edu-row">
       <div class="edu-dates"><time datetime="2016">2016</time> - <time datetime="2020">2020</time></div>
-      <div class="edu-main"><b>UniTO</b> - <span>Scienze della Comunicazione</span></div>
+      <div class="edu-main" data-i18n="edu2"><b>UniTO</b> - <span>Scienze della Comunicazione</span></div>
     </div>
   </section>
 
   <section>
-    <h2 class="label">Skill</h2>
+    <h2 class="label" data-i18n="l.skills">Skill</h2>
     <div class="skill-row">
-      <div class="skill-cat">Strumenti</div>
-      <div class="skill-items">Figma (componenti, varianti, variables, librerie)&nbsp;· Storybook&nbsp;· GitHub&nbsp;· Claude&nbsp;Code</div>
+      <div class="skill-cat" data-i18n="sk1.cat">Strumenti</div>
+      <div class="skill-items" data-i18n="sk1">Figma (componenti, varianti, variables, librerie)&nbsp;· Storybook&nbsp;· GitHub&nbsp;· Claude&nbsp;Code</div>
     </div>
     <div class="skill-row">
-      <div class="skill-cat">Metodo &amp; ricerca</div>
-      <div class="skill-items">User&nbsp;research desk e field (shadowing, interviste, questionari)&nbsp;· Test&nbsp;di&nbsp;usabilità&nbsp;· Facilitazione&nbsp;di&nbsp;workshop</div>
+      <div class="skill-cat" data-i18n="sk2.cat">Metodo &amp; ricerca</div>
+      <div class="skill-items" data-i18n="sk2">User&nbsp;research desk e field (shadowing, interviste, questionari)&nbsp;· Test&nbsp;di&nbsp;usabilità&nbsp;· Facilitazione&nbsp;di&nbsp;workshop</div>
     </div>
     <div class="skill-row">
-      <div class="skill-cat">Product &amp; UI</div>
-      <div class="skill-items">Concept&nbsp;design&nbsp;· Wireframe&nbsp;· UI&nbsp;design&nbsp;· User&nbsp;flow&nbsp;· Architettura&nbsp;dell'informazione&nbsp;· Prototipazione&nbsp;· Accessibilità&nbsp;(WCAG&nbsp;2.1&nbsp;AA)&nbsp;· Handoff&nbsp;a&nbsp;sviluppo</div>
+      <div class="skill-cat" data-i18n="sk3.cat">Product &amp; UI</div>
+      <div class="skill-items" data-i18n="sk3">Concept&nbsp;design&nbsp;· Wireframe&nbsp;· UI&nbsp;design&nbsp;· User&nbsp;flow&nbsp;· Architettura&nbsp;dell'informazione&nbsp;· Prototipazione&nbsp;· Accessibilità&nbsp;(WCAG&nbsp;2.1&nbsp;AA)&nbsp;· Handoff&nbsp;a&nbsp;sviluppo</div>
     </div>
     <div class="skill-row">
-      <div class="skill-cat">Design system</div>
-      <div class="skill-items">Design&nbsp;system&nbsp;e&nbsp;design&nbsp;token&nbsp;· Atomic&nbsp;Design&nbsp;· Documentazione&nbsp;di&nbsp;componenti&nbsp;· Gestione&nbsp;e&nbsp;generazione&nbsp;automatizzata</div>
+      <div class="skill-cat" data-i18n="sk4.cat">Design system</div>
+      <div class="skill-items" data-i18n="sk4">Design&nbsp;system&nbsp;e&nbsp;design&nbsp;token&nbsp;· Atomic&nbsp;Design&nbsp;· Documentazione&nbsp;di&nbsp;componenti&nbsp;· Gestione&nbsp;e&nbsp;generazione&nbsp;automatizzata</div>
     </div>
     <div class="skill-row">
-      <div class="skill-cat">AI workflow</div>
-      <div class="skill-items">Uso quotidiano dell'AI nel processo di design&nbsp;· Creazione&nbsp;di&nbsp;prototipi&nbsp;sviluppati</div>
+      <div class="skill-cat" data-i18n="sk5.cat">AI workflow</div>
+      <div class="skill-items" data-i18n="sk5">Uso quotidiano dell'AI nel processo di design&nbsp;· Creazione&nbsp;di&nbsp;prototipi&nbsp;sviluppati</div>
     </div>
   </section>
 
 
   <section style="margin-bottom: 0;">
-    <h2 class="label">Lingue</h2>
-    <p class="lang-row">Inglese - C1</p>
+    <h2 class="label" data-i18n="l.lang">Lingue</h2>
+    <p class="lang-row" data-i18n="lang">Inglese - C1</p>
   </section>
 
 </div>
+
+<script>
+/* Versione inglese: un solo file, testo in un dizionario unico.
+   L'italiano resta nell'HTML e viene salvato in data-it al primo scambio,
+   cosi' le due versioni non possono divergere. URL: ?lang=en */
+(function () {
+  var EN = {
+    'city': 'Turin',
+    'l.about': 'About',
+    'bio': "I'm a Digital Product Designer with 3 years of experience and a double background: communication and digital product. Right now I'm exploring every way AI can support me in my work. By instinct I bring order to things, but when I get to invent I enjoy myself a little more.",
+    'l.exp': 'Experience',
+    'job1.dates': '<time datetime="2023">2023</time> - present',
+    'job1.aka': '(formerly Enhancers)',
+    'job1.desc': 'I design flows for SaaS, B2C and B2B products. I turn user needs into clear flows, working closely with product managers and engineering. I move between Figma and coded prototypes depending on what the project needs.',
+    'l.project': 'Selected project',
+    'job1.proj': '<b>Lextel AI</b> - an AI SaaS for lawyers, among the first AI products in Italy (2023): UX/UI and launch landing page.',
+    'job2.desc': 'Visual identities and graphic output for print and digital, for small local brands.',
+    'job2.proj': "<b>Malaterra</b> - a pizzeria chain in Rome, where I designed a children's card game printed on the restaurant's placemats.",
+    'l.edu': 'Education',
+    'edu1': '<b>IAAD</b> - <span>Digital Communication Design (BA)</span>',
+    'edu2': '<b>University of Turin</b> - <span>Communication Sciences (BA)</span>',
+    'l.skills': 'Skills',
+    'sk1.cat': 'Tools',
+    'sk1': 'Figma (components, variants, variables, libraries)&nbsp;· Storybook&nbsp;· GitHub&nbsp;· Claude&nbsp;Code',
+    'sk2.cat': 'Research',
+    'sk2': 'Desk and field user&nbsp;research (shadowing, interviews, surveys)&nbsp;· Usability&nbsp;testing&nbsp;· Workshop&nbsp;facilitation',
+    'sk3.cat': 'Product &amp; UI',
+    'sk3': 'Concept&nbsp;design&nbsp;· Wireframing&nbsp;· UI&nbsp;design&nbsp;· User&nbsp;flows&nbsp;· Information&nbsp;architecture&nbsp;· Prototyping&nbsp;· Accessibility&nbsp;(WCAG&nbsp;2.1&nbsp;AA)&nbsp;· Design&nbsp;handoff',
+    'sk4.cat': 'Design systems',
+    'sk4': 'Design&nbsp;systems and design&nbsp;tokens&nbsp;· Atomic&nbsp;Design&nbsp;· Component&nbsp;documentation&nbsp;· Maintenance and automated&nbsp;generation',
+    'sk5.cat': 'AI workflow',
+    'sk5': 'Daily use of AI in the design process&nbsp;· Building working&nbsp;prototypes',
+    'l.lang': 'Languages',
+    'lang': 'Italian - native&nbsp;· English - C1'
+  };
+
+  var EN_META = 'Digital Product Designer based in Turin, 3 years of experience. User flows and UI for B2B and B2C SaaS products, design systems and design tokens, user research and usability testing.';
+
+  /* Nessun &nbsp; qui dentro: nei blocchi JSON-LD le entita' HTML non vengono
+     interpretate e finirebbero nei dati come testo letterale. */
+  var EN_LD = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Giulio Barboni",
+    "jobTitle": "Digital Product Designer",
+    "description": "I'm a Digital Product Designer with 3 years of experience and a double background: communication and digital product. Right now I'm exploring every way AI can support me in my work. By instinct I bring order to things, but when I get to invent I enjoy myself a little more.",
+    "email": "giu.barboni@gmail.com",
+    "telephone": "+393317548002",
+    "address": { "@type": "PostalAddress", "addressLocality": "Turin", "addressCountry": "IT" },
+    "url": "https://giubarboni.github.io/portfolio/",
+    "mainEntityOfPage": "https://giubarboni.github.io/cv/",
+    "worksFor": [
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Digital Product Designer",
+        "startDate": "2023",
+        "description": "First Junior Product Designer, then Digital Product Designer. Flows for SaaS, B2C and B2B products, working closely with product managers and engineering. Selected project: Lextel AI, an AI SaaS for lawyers, among the first AI products in Italy (2023) - UX/UI and landing page.",
+        "worksFor": { "@type": "Organization", "name": "Tinexta Innovation Hub", "alternateName": "Enhancers" }
+      },
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Junior Art Director",
+        "startDate": "2022",
+        "endDate": "2023",
+        "description": "Visual identities and graphic output for print and digital, for small local brands. Selected project: Malaterra, a pizzeria chain in Rome - a children's card game printed on the restaurant's placemats.",
+        "worksFor": { "@type": "Organization", "name": "Feel Love Agency" }
+      }
+    ],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "IAAD", "alternateName": "Istituto d'Arte Applicata e Design", "description": "Digital Communication Design, 2020-2023" },
+      { "@type": "CollegeOrUniversity", "name": "University of Turin", "alternateName": "Universita degli Studi di Torino", "description": "Communication Sciences, 2016-2020" }
+    ],
+    "knowsAbout": [
+      "Figma", "Storybook", "GitHub", "Claude Code",
+      "User research", "Usability testing", "Workshop facilitation",
+      "Concept design", "Wireframing", "UI design", "User flows",
+      "Information architecture", "Prototyping", "Accessibility WCAG 2.1 AA",
+      "Design handoff", "Design systems", "Design tokens", "Atomic Design",
+      "Component documentation", "AI in the design workflow"
+    ],
+    "knowsLanguage": [
+      { "@type": "Language", "name": "Italian", "description": "Native" },
+      { "@type": "Language", "name": "English", "alternateName": "en", "description": "C1" }
+    ]
+  };
+
+  var ldEl = document.querySelector('script[type="application/ld+json"]');
+  var metaEl = document.querySelector('meta[name="description"]');
+  var btn = document.getElementById('langBtn');
+  var itLD = ldEl ? ldEl.textContent : '';
+  var itMeta = metaEl ? metaEl.getAttribute('content') : '';
+
+  function apply(lang) {
+    var en = lang === 'en';
+    document.documentElement.lang = en ? 'en' : 'it';
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      if (el.dataset.it === undefined) el.dataset.it = el.innerHTML;
+      el.innerHTML = en ? (EN[el.dataset.i18n] || el.dataset.it) : el.dataset.it;
+    });
+    if (metaEl) metaEl.setAttribute('content', en ? EN_META : itMeta);
+    if (ldEl) ldEl.textContent = en ? JSON.stringify(EN_LD, null, 2) : itLD;
+    if (btn) {
+      btn.textContent = en ? 'ITA' : 'ENG';
+      btn.setAttribute('aria-label', en ? 'Torna alla versione italiana' : 'Switch to English');
+    }
+  }
+
+  function setLang(lang) {
+    apply(lang);
+    try {
+      var u = new URL(window.location.href);
+      if (lang === 'en') u.searchParams.set('lang', 'en'); else u.searchParams.delete('lang');
+      history.replaceState(null, '', u.pathname + u.search + u.hash);
+    } catch (e) { /* su file:// replaceState non e' permesso: la lingua cambia comunque */ }
+  }
+
+  if (btn) btn.addEventListener('click', function () {
+    setLang(document.documentElement.lang === 'en' ? 'it' : 'en');
+  });
+
+  if (new URLSearchParams(window.location.search).get('lang') === 'en') apply('en');
+})();
+</script>
 
 </body>
 </html>
