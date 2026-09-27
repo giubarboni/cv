@@ -200,6 +200,17 @@
     letter-spacing: 0.06em;
     color: var(--ink-dim);
     margin: 1.2rem 0 0.6rem;
+
+    /* L'intestazione non deve restare sola in fondo a una pagina: senza
+       questo, allungando un paragrafo sopra, "Un progetto significativo"
+       finisce a chiudere la pagina e il progetto comincia in quella dopo. */
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .sub-label + ul {
+    break-before: avoid;
+    page-break-before: avoid;
   }
 
   .job ul {
@@ -423,7 +434,7 @@
       <div class="job-main">
         <h3 class="job-company">Tinexta Innovation Hub <span class="aka" data-i18n="job1.aka">(già Enhancers)</span></h3>
         <p class="job-title">Junior Product Designer → Digital Product Designer</p>
-        <p class="job-desc" data-i18n="job1.desc">Disegno flussi per SaaS, prodotti B2C e B2B. Trasformo user needs in flussi chiari, lavorando a stretto contatto con product manager e sviluppo. Mi muovo tra Figma e prototipi sviluppati in base alle necessità di progetto.</p>
+        <p class="job-desc" data-i18n="job1.desc">Disegno flussi per SaaS, prodotti B2C e B2B, e li presento ai product manager, agli sviluppatori che li realizzeranno e agli stakeholder del cliente, anche a livello dirigenziale. Porto alternative invece di una sola soluzione, ognuna con una raccomandazione e il ragionamento che la sostiene, così il confronto è sui compromessi e non sui gusti. Mi muovo tra Figma e prototipi sviluppati in base alle necessità di progetto.</p>
         <h4 class="sub-label" data-i18n="l.project">Un progetto significativo</h4>
         <ul>
           <li data-i18n="job1.proj"><b>Lextel AI</b> - SaaS AI per avvocati, tra i primi prodotti AI italiani (2023): UX/UI e landing page.</li>
@@ -502,7 +513,7 @@
     'l.exp': 'Experience',
     'job1.dates': '<time datetime="2023">2023</time> - present',
     'job1.aka': '(formerly Enhancers)',
-    'job1.desc': 'I design flows for SaaS, B2C and B2B products. I turn user needs into clear flows, working closely with product managers and engineering. I move between Figma and coded prototypes depending on what the project needs.',
+    'job1.desc': 'I design flows for SaaS, B2C and B2B products, and I present them to product managers, to the engineers who will build them, and to client stakeholders up to C-level. I bring options rather than a single answer, each with a recommendation and the reasoning behind it, so the discussion is about trade-offs instead of taste. I move between Figma and coded prototypes depending on what the project needs.',
     'l.project': 'Selected project',
     'job1.proj': '<b>Lextel AI</b> - an AI SaaS for lawyers, among the first AI products in Italy (2023): UX/UI and launch landing page.',
     'job2.desc': 'Visual identities and graphic output for print and digital, for small local brands.',
