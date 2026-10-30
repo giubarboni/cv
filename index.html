@@ -156,6 +156,8 @@
     display: flex;
     gap: 2rem;
     margin-bottom: 2.2rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .job:last-child { margin-bottom: 0; }
@@ -415,7 +417,7 @@
       <div class="meta-row">
         <span data-i18n="city">Torino</span>
         <a href="mailto:giu.barboni@gmail.com">giu.barboni@gmail.com</a>
-        <a href="tel:+393317548002" data-i18n="tel">331 7548002</a>
+        <a href="tel:+393317548002" data-i18n="tel">+39 3317548002</a>
         <a href="https://giubarboni.github.io/portfolio/" class="portfolio-link">Portfolio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
       </div>
     </div>
@@ -434,7 +436,7 @@
       <div class="job-main">
         <h3 class="job-company">Tinexta Innovation Hub <span class="aka" data-i18n="job1.aka">(già Enhancers)</span></h3>
         <p class="job-title">Junior Product Designer → Digital Product Designer</p>
-        <p class="job-desc" data-i18n="job1.desc">Come consulente progetto SaaS, applicazioni e web app, sia per il mercato B2C sia per il B2B. Presento io stesso il mio lavoro a interlocutori diversi, dal management C-level al personale tecnico e agli sviluppatori. Porto alternative invece di una sola soluzione definitiva, ognuna con una raccomandazione e il ragionamento che la sostiene, in modo da avere un confronto sui compromessi e non sui gusti. A seconda dei requisiti del progetto, uso Figma oppure prototipi realizzati tramite codice.</p>
+        <p class="job-desc" data-i18n="job1.desc">Come consulente progetto prodotti SaaS, applicazioni e web app, occupandomi dell'intero ciclo di design del prodotto: dall'inquadramento di problemi ambigui ai dettagli tecnici che semplificano lo sviluppo. Lavoro sia per il mercato B2C sia per il B2B, quindi sono abituato a progettare interfacce ricche di dati ed esperienze ad alta conversione, con un workflow potenziato dall'AI.<br>Ho il massimo livello di competenza in Figma, che integro con prototipi sviluppati. Questo aiuta me e il mio team a interagire con più facilità con gli stakeholder, portando diverse alternative che rendono concreti i problemi astratti.</p>
         <h4 class="sub-label" data-i18n="l.project">Un progetto significativo</h4>
         <ul>
           <li data-i18n="job1.proj"><b>Lextel AI</b> - SaaS AI per avvocati, tra i primi prodotti AI italiani (2023): UX/UI e landing page.</li>
@@ -507,13 +509,13 @@
 (function () {
   var EN = {
     'city': 'Turin',
-    'tel': '+39 331 7548002',
+    'tel': '+39 3317548002',
     'l.about': 'About',
     'bio': "I'm a Digital Product Designer with 3 years of experience and a double background: communication and digital product. Right now I'm exploring every way AI can support me in my work. By instinct I bring order to things, but when I get to invent I enjoy myself a little more.",
     'l.exp': 'Experience',
     'job1.dates': '<time datetime="2023">2023</time> - present',
     'job1.aka': '(formerly Enhancers)',
-    'job1.desc': 'As a consultant I design SaaS products, applications and web apps, across both B2C and B2B. I present the work myself, to stakeholders ranging from C-level executives to technical staff and developers. I bring options rather than a single answer, each with a recommendation and the reasoning behind it, so the discussion is about trade-offs instead of taste. Depending on what the project needs, I work in Figma or in coded prototypes.',
+    'job1.desc': 'As a consultant I design SaaS products, applications and web apps, owning the full range of product design, from the framing of ambiguous problems to the technical details that streamline the development. I work for both B2C and B2B markets, so I\'m used to designing data-heavy interfaces and high-conversion experiences using an AI-powered workflow.<br>I have the highest proficiency level in Figma, which I integrate with developed prototypes. This helps me and my team interact more easily with stakeholders, bringing options to make abstract problems concrete.',
     'l.project': 'Selected project',
     'job1.proj': '<b>Lextel AI</b> - an AI SaaS for lawyers, among the first AI products in Italy (2023): UX/UI and launch landing page.',
     'job2.desc': 'Visual identities and graphic output for print and digital, for small local brands.',
